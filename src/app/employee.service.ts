@@ -21,7 +21,7 @@ export class EmployeeService{
 
     }
 
-    addEmployees(emp: Employee){
-      this.employeeCollection.add(emp);
-    }
+    // addEmployees(emp: Employee){
+    //   this.employeeCollection.add(emp);
+    // }
 }
