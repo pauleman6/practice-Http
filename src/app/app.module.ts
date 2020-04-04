@@ -16,7 +16,7 @@ import {environment} from '../environments/environment';
 @NgModule({
   imports:      [ BrowserModule, FormsModule, 
   AngularFireModule.initializeApp(environment.firebase),
-  AngularForestoreModule, AngularFireStorageModule ],
+  AngularFirestoreModule, AngularFireStorageModule ],
   declarations: [ AppComponent, EmployeeListComponent, EmployeeDetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [EmployeeService]
