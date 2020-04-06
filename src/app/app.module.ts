@@ -12,11 +12,12 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, 
   AngularFireModule.initializeApp(environment.firebase),
-  AngularFirestoreModule, AngularFireStorageModule ],
+  AngularFirestoreModule, AngularFireStorageModule, HttpClientModule ],
   declarations: [ AppComponent, EmployeeListComponent, EmployeeDetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [EmployeeService]

@@ -11,6 +11,9 @@ export class EmployeeListComponent implements OnInit {
 
   employees: Employee[] = [];
   errorMsg;
+  newEmployee: Employee;
+  eName: string;
+  count: number = 1;
 
   constructor(private empService: EmployeeService) { }
 
@@ -21,5 +24,20 @@ export class EmployeeListComponent implements OnInit {
       console.log(data)
     })
   }
+
+  onKey(n: string){
+    this.eName = n;
+
+  }
+
+  addNewEmployee(){
+    this.newEmployee = {name: this.eName, id: this.count++, age: 20};
+        console.log(this.newEmployee);
+  }
+
+
+
+  
+
 
 }

@@ -1,3 +1,8 @@
+<div>
+  <input type="text" #newName (keyup) = "onKey(newName.value)">
+  <button (click) ="addNewEmployee()">Submit</button>
+</div>
+
 <h2>Employee List</h2>
     <h3>{{errorMsg}}</h3>
     <ul *ngFor="let employee of employees">
