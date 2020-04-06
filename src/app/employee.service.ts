@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
+@Injectable()
 export class EmployeeService {
 
   employees: Observable<Employee[]>;
