@@ -41,7 +41,11 @@ export class EmployeeService implements OnInit{
   }
 
   deleteEmployees(){
-    this.http.delete("https://httpemployee-bc50e.firebaseio.com/posts.json");
+    this.http.delete("https://httpemployee-bc50e.firebaseio.com/posts.json")
+    .subscribe(data => {
+      console.log(data);
+    })
+    ;
   }
 
 
