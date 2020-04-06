@@ -14,6 +14,7 @@ export class EmployeeListComponent implements OnInit, AfterViewChecked {
   errorMsg;
   newEmployee: Employee;
   eName: string;
+  eAge: number;
   count: number = 1;
 
   constructor(private empService: EmployeeService) { }
