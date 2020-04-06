@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-employee-list',
@@ -19,10 +20,20 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
    // this.employees = this.empService.getEmployees();
-    this.empService.getEmployees()
-    .subscribe(data => {this.employees = data
-      console.log(data)
-    })
+   // this.employees = this.empService.getEmployees();
+  //  console.log("this is the employees array" + this.employees);
+      this.empService.getEmployees()
+      .pipe(map(responseData => {
+       const postsArray: Employee[] = [];
+       for(const key in responseData){
+         postsArray.push(responseData[key]);
+       }
+       //this.employees = postsArray;
+       return postsArray;
+     }))
+    .subscribe(data  => {this.employees = data}
+    )
+    
   }
 
   onKey(n: string){
@@ -33,6 +44,7 @@ export class EmployeeListComponent implements OnInit {
   addNewEmployee(){
     this.newEmployee = {name: this.eName, id: this.count++, age: 20};
         console.log(this.newEmployee);
+        this.empService.addEmployees(this.newEmployee);
   }
 
 

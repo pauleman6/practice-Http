@@ -16,13 +16,22 @@ export class EmployeeService{
   }
   
   getEmployees(): Observable<Employee[]>{
-     this.employees = this.http.get('https://httpemployee-bc50e.firebaseio.com/posts.json')
+
+    this.employees = this.http.get<Employee[]>('https://httpemployee-bc50e.firebaseio.com/posts.json');
+
+    //  this.http.get<Employee>('https://httpemployee-bc50e.firebaseio.com/posts.json')
     //  .pipe(map(responseData => {
-    //    const postsArray = []
+    //    const postsArray: Employee[] = [];
+    //    for(const key in responseData){
+    //      postsArray.push(responseData[key]);
+    //    }
+    //    this.employees = postsArray;
+    //    return postsArray;
     //  }))
-    //  .subscribe(dataResponse => {
-    //    console.log(dataResponse);
+    //  .subscribe(posts => {
+    //    console.log(posts);
     //  })
+
       return this.employees;
 
     }
