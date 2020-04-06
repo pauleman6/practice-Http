@@ -11,7 +11,6 @@ import {map} from 'rxjs/operators';
 export class EmployeeListComponent implements OnInit, AfterViewChecked {
 
   employees: Employee[] = [];
-  errorMsg;
   newEmployee: Employee;
   eName: string;
   eAge: number;
