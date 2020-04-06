@@ -41,10 +41,10 @@ export class EmployeeListComponent implements OnInit, AfterViewChecked {
   }
 
   addNewEmployee(){
-    this.newEmployee = {name: this.eName, id: this.count++, age: 20};
+    this.newEmployee = {name: this.eName, id: this.count++, age: this.eAge};
         console.log(this.newEmployee);
         this.empService.addEmployees(this.newEmployee);
-  }
+  }s
 
 
 
