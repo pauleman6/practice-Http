@@ -8,16 +8,11 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeService } from './employee.service';
 
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireStorageModule} from '@angular/fire/storage';
-import {environment} from '../environments/environment';
+
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, 
-  AngularFireModule.initializeApp(environment.firebase),
-  AngularFirestoreModule, AngularFireStorageModule, HttpClientModule ],
+  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
   declarations: [ AppComponent, EmployeeListComponent, EmployeeDetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [EmployeeService]
