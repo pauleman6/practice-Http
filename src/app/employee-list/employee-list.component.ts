@@ -46,9 +46,6 @@ export class EmployeeListComponent implements OnInit, AfterViewChecked {
         this.empService.addEmployees(this.newEmployee);
   }
 
-  clearEmployees(){
-    this.empService.deleteEmployees();
-  }
 
 
 
