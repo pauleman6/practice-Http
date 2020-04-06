@@ -18,11 +18,11 @@
   <h2>Employee List</h2>
   <div class="card" *ngFor="let employee of employees" >
     <div class="card-header">
-      {{employee.name}}
+      <h3>{{employee.name}}</h3>
     </div>
     <div class="card-body">
-      <ul>{{employee.id}}</ul>
-      <ul>{{employee.age}}</ul>
+      <ul>Employee id: {{employee.id}}</ul>
+      <ul>Employee Age: {{employee.age}}</ul>
     </div>
   </div>
 </div>
